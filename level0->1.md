@@ -1,3 +1,11 @@
+**Username:** ``leviathan0``
+
+**Password:** ``leviathan0``
+
+
+#
+
+
 We start off the challenge by logging in as ``Leviathan0`` over ssh on Port ``2223``:
 
 ```console
