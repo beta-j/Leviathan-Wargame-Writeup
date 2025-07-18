@@ -37,13 +37,15 @@ drwxr-x---  2 leviathan1 leviathan0 4096 Oct  5  2023 .backup
 
 It looks like our user; `leviathan0` has access to the hidden directory `.backup`.  So we can have a look at it's contents:
 
+```console
 leviathan0@gibson:~$ ls -la .backup/
 total 140
 drwxr-x--- 2 leviathan1 leviathan0   4096 Oct  5  2023 .
 drwxr-xr-x 3 root       root         4096 Oct  5  2023 ..
 -rw-r----- 1 leviathan1 leviathan0 133259 Oct  5  2023 bookmarks.html
+```
 
-The `.backups` directory contains a dile called `bookmarks.html`.  From the size of the file it looks pretty large so let's have a quick peek at what it contains:
+The `.backups` directory contains a file called `bookmarks.html`.  From the size of the file it looks pretty large so let's have a quick peek at what it contains:
 
 ```console
 leviathan0@gibson:~$ head -n 20 .backup/bookmarks.html
