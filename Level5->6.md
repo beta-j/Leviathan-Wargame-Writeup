@@ -25,3 +25,15 @@ drwxr-xr-x 83 root       root        4096 Apr 10 14:24 ..
 leviathan5@gibson:~$ ./leviathan5
 Cannot find /tmp/file.log
 ```
+
+If you've been following along from the previous levels, the next steps to take should be quite clear by now...  
+
+It looks like the `leviathan5` is attempting to return the contents of `/tmp/file.log`, but it's not finding the file and returniogn an error.  We need to figure out a way of tricking the executable to return the contents of `/etc/leviathan_pass/leviathan6` instead.  How do we do that?  Well, by creating a **symlink** of course!  We can create a symbolic link that points `/tmp/file.log` to `/etc/leviathan_pass/leviathan6`, this way, when the executable looks for `/tmp/file.log` it will follow the symlink and return the contents of `leviathan6` instead.  Keep in mind that with the SUID bit, `leviathan5` is running with the user priviliges of leviathan6, which has read access to `/etc/leviathan_pass/leviathan6`.
+
+```console
+leviathan5@gibson:~$ ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+leviathan5@gibson:~$ ./leviathan5
+szo7HDB88w
+```
+
+And just like that we can move on to the next level!
